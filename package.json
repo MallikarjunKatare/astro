@@ -10,6 +10,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^3.0.13"
+    "@astrojs/preact": "^3.0.0",
+    "@astrojs/rss": "^3.0.0",
+    "@astrojs/tailwind": "^5.0.0",
+    "astro": "^3.0.13",
+    "astro-navbar": "^2.0.1",
+    "flowbite": "^1.8.1",
+    "preact": "^10.17.1"
   }
 }

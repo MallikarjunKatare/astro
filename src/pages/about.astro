@@ -1,0 +1,120 @@
+---
+
+/*import style file*/
+
+
+import MainLayout from "../Layout/MainLayout.astro";
+
+const pagetitle ="About Page"
+const identity = {
+	firstName: "Mallikarjun",
+	country: "India",
+	occupation: "Frontend dev.",
+	hobbies: ["photography", "birdwatching", "chess", "travelling"],
+};
+
+const skills = [
+	"HTML",
+	"CSS",
+	"JavaScript",
+	"Angular",
+	"Astro",
+	"Writing Docs",
+];
+
+const happy = true;
+const finished = true;
+const goal = 3;
+
+
+
+const skillColor = "red";
+const letcolor ="purple";
+
+const textCase ="uppercase";
+const fontWeight ="bold";
+
+---
+
+
+		<style define:vars={{skillColor, letcolor, fontWeight, textCase}}>
+			h1{
+				color : var(--letcolor);
+				font-size: 4rem;
+			}
+			.skill{
+
+				font-weight: var(--fontWeight);
+				color: var(--skillColor);
+				text-transform: var(--textCase);
+			
+			}
+		</style>
+
+
+	<MainLayout pagetitle ="About Page">
+	<script>
+
+
+		function hid1e(){
+			alert('ABC');
+			ok.innerHTML="we are here"
+			return
+		}
+
+		document.getElementById("ok").addEventListener("click",hid1e)
+	</script>
+
+
+		<h1>{pagetitle}</h1>
+		<h2>... and my {pagetitle} site!</h2>
+
+		<p>
+			I am working through Astro's introductory tutorial. This is the
+			second page on my website, and it's the first one I built myself!
+		</p>
+
+		<p>
+			This site will update as I complete more of the tutorial, so keep
+			checking back and see how my journey is going!
+		</p>
+
+		<p>Here are a few facts about me:</p>
+		<ul>
+			<li>My name is {identity.firstName}.</li>
+			<li>
+				I live in {identity.country} and I work as a {
+					identity.occupation
+				}.
+			</li>
+			{
+				identity.hobbies.length >= 2 && (
+					<li>
+						Two of my hobbies are: {identity.hobbies[3]} and {""}
+						{identity.hobbies[1]}
+					</li>
+				)
+			}
+		</ul>
+		<p>My skills are:</p>
+		<ul>
+			{skills.map((skill) => <li class="skill">{skill}</li>)}
+		</ul>
+
+		{happy && <p>I am happy to be learning Astro!</p>}
+
+		{finished && <p>I finished this tutorial!</p>}
+		
+		{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+
+	<p class="id1">this is block 1111111</p>
+	<button id="ok">ok</button>
+
+		<br>
+
+		<div>
+			
+		</div>
+
+
+	</MainLayout>
